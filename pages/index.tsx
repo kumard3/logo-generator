@@ -14,9 +14,7 @@ xmlns="http://www.w3.org/2000/svg">
 </svg>`;
   const saveDoc = () => {
     const element = document.createElement("a");
-    let string = svg.replace("%PDF-1.3", "");
-    console.log(string);
-    const file = new Blob([string], {
+    const file = new Blob([svg], {
       type: "text/plain",
     });
     element.href = URL.createObjectURL(file);

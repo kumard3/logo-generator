@@ -4,6 +4,8 @@ export default function Home() {
   const [color, setColor] = useState("#FC4343");
   const [nameColor, setNameColor] = useState("#Ffff");
   const [range, setRange] = useState(0);
+  const[width ,setWidth] = useState("0")
+  const[height,setHeight] = useState("0")
   const [borderRadius, setBorderRadius] = useState("0");
   const [name, setName] = useState("");
   const svg = `<svg
@@ -31,6 +33,8 @@ export default function Home() {
         color={color}
         nameColor={nameColor}
         borderRadius={borderRadius}
+        width={width}
+        height={height}
       /></div>
       <div>      <input
         type="text"
@@ -39,7 +43,8 @@ export default function Home() {
         onChange={(e) => setName(e.target.value)}
       />
      </div>
-      <div>      <input
+      <div>      
+        <input
         type="color"
         value={color}
         onChange={(e) => setColor(e.target.value)}
@@ -54,11 +59,22 @@ export default function Home() {
         type="range"
         value={borderRadius}
         onChange={(e) => setBorderRadius(e.target.value)}
-      /></div>
-
-
-
+      />      
+      <input
+        type="range"
+        min="0" max="1000"
+        value={width}
+        onChange={(e) => setWidth(e.target.value)}
+      />      <input
+        type="range"
+        min="0" max="1000"
+        value={height}
+        onChange={(e) => setHeight(e.target.value)}
+      />
+      
+      </div>
       {borderRadius}
+      {width}
       <button onClick={saveDoc}>Download</button>
     </main>
   );

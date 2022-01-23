@@ -4,7 +4,7 @@ export default function Svg({
   nameColor,
   borderRadius,
   width,
-  height
+  height,
 }: any) {
   return (
     //   <div className={`opacity-100 w-[10rem] h-[10rem] `}
@@ -28,8 +28,8 @@ export default function Svg({
       style={{
         backgroundColor: `${color}`,
         borderRadius: `${borderRadius}px`,
-        width:`${width}px`,
-        height:`${height}px`
+        width: `${width}px`,
+        height: `${height}px`,
       }}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -45,28 +45,34 @@ export default function Home() {
         <SvgLayout>
           {" "}
           <input
+
             type="text"
             value={name}
-            className="bg-white border-2 border-gray-400 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+            className=" bg-gray-800 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
             onChange={(e) => setName(e.target.value)}
           />
-          <input
-            type="color"
-            value={color}
-            onChange={(e) => setColor(e.target.value)}
-          />
-          {nameColor}
-          <input
-            type="color"
-            value={nameColor}
-            onChange={(e) => setNameColor(e.target.value)}
-          />
-          <input
+          <div className="py-4 w-full flex  justify-around ">
+            <input
+              type="color"
+              value={color}
+              onChange={(e) => setColor(e.target.value)}
+            />
+            {color}
+          </div>
+          <div className="py-4 w-full flex  justify-around ">
+            <input
+              type="color"
+              value={nameColor}
+              onChange={(e) => setNameColor(e.target.value)}
+            />
+            {nameColor}
+          </div>
+          {/* <input
             type="range"
             value={borderRadius}
             onChange={(e) => setBorderRadius(e.target.value)}
-          />
-          <input
+          /> */}
+          {/* <input
             type="range"
             min="0"
             max="1000"
@@ -79,16 +85,16 @@ export default function Home() {
             max="1000"
             value={height}
             onChange={(e) => setHeight(e.target.value)}
-          />
+          /> */}
         </SvgLayout>
       </Container>
 
       <div></div>
-      {borderRadius}
-      {width}
-      <div className="flex justify-center items-center">
+      {/* {borderRadius}
+      {width} */}
+      <div className="flex justify-center items-center my-6">
         <button
-          className="border-2 border-black px-3 py-2 rounded-xl "
+          className="border-2 border-white px-3 py-2 rounded-xl "
           onClick={saveDoc}
         >
           Download

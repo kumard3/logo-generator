@@ -6,11 +6,12 @@ import SvgLayout from "../components/SvgLayout";
 export default function Home() {
   const [color, setColor] = useState("#FC4343");
   const [nameColor, setNameColor] = useState("#Ffff");
-  const [range, setRange] = useState(0);
-  const [width, setWidth] = useState("0");
-  const [height, setHeight] = useState("0");
+
+  const [xaxis, setXaxis] = useState("0");
+  const [yaxis, setYaxis] = useState("0");
   const [borderRadius, setBorderRadius] = useState("0");
   const [name, setName] = useState("");
+
   const svg = `<svg
             fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -39,8 +40,8 @@ export default function Home() {
           color={color}
           nameColor={nameColor}
           borderRadius={borderRadius}
-          width={width}
-          height={height}
+          width={xaxis}
+          height={yaxis}
         />
         <SvgLayout>
           {" "}
@@ -72,19 +73,29 @@ export default function Home() {
               {nameColor}
             </div>
           </div>
+          <div className="py-4 w-full flex flex-col justify-around ">
+            <h1>X axis </h1>
+            <div className="py-4 w-full flex  justify-around ">
+              <input
+                type="range"
+                value={xaxis}
+                onChange={(e) => setXaxis(e.target.value)}
+              />
+              {xaxis}
+            </div>
+          </div>
+          <div className="py-4 w-full flex flex-col justify-around ">
+            <h1>Y axis </h1>
+            <div className="py-4 w-full flex  justify-around ">
+              <input
+                type="range"
+                value={yaxis}
+                onChange={(e) => setYaxis(e.target.value)}
+              />
+              {yaxis}
+            </div>
+          </div>{" "}
           {/* <input
-            type="range"
-            value={borderRadius}
-            onChange={(e) => setBorderRadius(e.target.value)}
-          /> */}
-          {/* <input
-            type="range"
-            min="0"
-            max="1000"
-            value={width}
-            onChange={(e) => setWidth(e.target.value)}
-          />{" "}
-          <input
             type="range"
             min="0"
             max="1000"
@@ -94,7 +105,7 @@ export default function Home() {
         </SvgLayout>
       </Container>
 
-      <div></div>
+      {/* <div></div> */}
       {/* {borderRadius}
       {width} */}
       <div className="flex justify-center items-center my-6">

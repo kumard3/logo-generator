@@ -30,8 +30,8 @@ export default function Svg({
         <svg id="svg" xmlns="http://www.w3.org/2000/svg">
           <ellipse cx="75" cy="75.5" rx="75" ry="75.5" fill={color} />
           <text
-            x="90"
-            y="80"
+            x={`${width}`}
+            y={`${height}`}
             fontFamily="Verdana"
             fontSize="35"
             fill={nameColor}

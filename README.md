@@ -56,19 +56,3 @@ yarn create next-app -e https://github.com/Cyphen12/tailwind-typescript-starter
 npx create-next-app -e https://github.com/Cyphen12/tailwind-typescript-starter
 
 ```
-
-  
-
-### Development
-
-  
-
-To start the project locally, run:
-
-  
-
-```bash
-
-yarn dev
-
-```

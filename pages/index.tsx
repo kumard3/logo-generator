@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import Container from "../components/Container";
 import Header from "../components/Header";
 import Svg from "../components/Svg";
+import SvgLayout from "../components/SvgLayout";
 export default function Home() {
   const [color, setColor] = useState("#FC4343");
   const [nameColor, setNameColor] = useState("#Ffff");
@@ -28,9 +30,9 @@ export default function Home() {
     element.click();
   }
   return (
-    <main className=" w-full h-full flex flex-col  font-[sans-serif]">
+    <main className=" w-full h-full flex flex-col  justify-center items-center font-[sans-serif] text-white bg-black min-h-screen">
       <Header />
-      <div>
+      <Container>
         {" "}
         <Svg
           name={name}
@@ -40,53 +42,58 @@ export default function Home() {
           width={width}
           height={height}
         />
-      </div>
-      <div>
-        {" "}
-        <input
-          type="text"
-          value={name}
-          className="bg-white border-2 border-gray-400 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
-          onChange={(e) => setName(e.target.value)}
-        />
-      </div>
-      <div>
-        <input
-          type="color"
-          value={color}
-          onChange={(e) => setColor(e.target.value)}
-        />
-        {nameColor}
-        <input
-          type="color"
-          value={nameColor}
-          onChange={(e) => setNameColor(e.target.value)}
-        />
-        <input
-          type="range"
-          value={borderRadius}
-          onChange={(e) => setBorderRadius(e.target.value)}
-        />
-        <input
-          type="range"
-          min="0"
-          max="1000"
-          value={width}
-          onChange={(e) => setWidth(e.target.value)}
-        />{" "}
-        <input
-          type="range"
-          min="0"
-          max="1000"
-          value={height}
-          onChange={(e) => setHeight(e.target.value)}
-        />
-      </div>
+        <SvgLayout>
+          {" "}
+          <input
+            type="text"
+            value={name}
+            className="bg-white border-2 border-gray-400 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="color"
+            value={color}
+            onChange={(e) => setColor(e.target.value)}
+          />
+          {nameColor}
+          <input
+            type="color"
+            value={nameColor}
+            onChange={(e) => setNameColor(e.target.value)}
+          />
+          <input
+            type="range"
+            value={borderRadius}
+            onChange={(e) => setBorderRadius(e.target.value)}
+          />
+          <input
+            type="range"
+            min="0"
+            max="1000"
+            value={width}
+            onChange={(e) => setWidth(e.target.value)}
+          />{" "}
+          <input
+            type="range"
+            min="0"
+            max="1000"
+            value={height}
+            onChange={(e) => setHeight(e.target.value)}
+          />
+        </SvgLayout>
+      </Container>
+
+      <div></div>
       {borderRadius}
       {width}
       <div className="flex justify-center items-center">
-      <button className="border-2 border-black px-3 py-2 rounded-xl "  onClick={saveDoc}>Download</button>
-         </div>
+        <button
+          className="border-2 border-black px-3 py-2 rounded-xl "
+          onClick={saveDoc}
+        >
+          Download
+        </button>
+      </div>
     </main>
   );
 }

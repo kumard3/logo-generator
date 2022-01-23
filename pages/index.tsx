@@ -45,27 +45,32 @@ export default function Home() {
         <SvgLayout>
           {" "}
           <input
-
             type="text"
             value={name}
             className=" bg-gray-800 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
             onChange={(e) => setName(e.target.value)}
           />
-          <div className="py-4 w-full flex  justify-around ">
-            <input
-              type="color"
-              value={color}
-              onChange={(e) => setColor(e.target.value)}
-            />
-            {color}
+          <div className="py-4 w-full flex flex-col justify-around ">
+            <h1>Background color </h1>
+            <div className="py-4 w-full flex  justify-around ">
+              <input
+                type="color"
+                value={color}
+                onChange={(e) => setColor(e.target.value)}
+              />
+              {color}
+            </div>
           </div>
-          <div className="py-4 w-full flex  justify-around ">
-            <input
-              type="color"
-              value={nameColor}
-              onChange={(e) => setNameColor(e.target.value)}
-            />
-            {nameColor}
+          <div className="py-4 w-full flex flex-col justify-around ">
+            <h1>textcolor </h1>
+            <div className="py-4 w-full flex  justify-around ">
+              <input
+                type="color"
+                value={nameColor}
+                onChange={(e) => setNameColor(e.target.value)}
+              />
+              {nameColor}
+            </div>
           </div>
           {/* <input
             type="range"

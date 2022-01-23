@@ -7,16 +7,17 @@ export default function Home() {
   const [color, setColor] = useState("#FC4343");
   const [nameColor, setNameColor] = useState("#Ffff");
 
-  const [xaxis, setXaxis] = useState("0");
-  const [yaxis, setYaxis] = useState("0");
+  const [xaxis, setXaxis] = useState("40");
+  const [yaxis, setYaxis] = useState("70");
   const [borderRadius, setBorderRadius] = useState("0");
-  const [name, setName] = useState("");
+  const [name, setName] = useState("test");
 
   const svg = `<svg
             fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="75" cy="75.5" rx="75" ry="75.5" fill='${color}' />
-            <text x="90" y="80" font-family="Nunito Sans" font-size="35" fill='${nameColor}'>
+            <text            x='${xaxis}'
+            y='${yaxis}' font-family="Nunito Sans" font-size="35" fill='${nameColor}'>
             ${name}
             </text>
             </svg>`;

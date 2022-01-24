@@ -32,7 +32,7 @@ export default function Home() {
     element.click();
   }
   return (
-    <main className=" w-full h-full flex flex-col  justify-center items-center font-[sans-serif] text-white bg-black min-h-screen">
+    <main className=" w-full flex flex-col  justify-center items-center font-[sans-serif] text-white bg-black min-h-screen">
       <Header />
       <Container>
         {" "}

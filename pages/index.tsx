@@ -3,21 +3,23 @@ import Container from "../components/Container";
 import Header from "../components/Header";
 import Svg from "../components/Svg";
 import SvgLayout from "../components/SvgLayout";
+
 export default function Home() {
   const [color, setColor] = useState("#FC4343");
   const [nameColor, setNameColor] = useState("#Ffff");
+  const [fontSize, setFontSize] = useState("60");
 
   const [xaxis, setXaxis] = useState("40");
-  const [yaxis, setYaxis] = useState("70");
+  const [yaxis, setYaxis] = useState("92");
   const [borderRadius, setBorderRadius] = useState("0");
-  const [name, setName] = useState("test");
+  const [name, setName] = useState("😎");
 
   const svg = `<svg
             fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="75" cy="75.5" rx="75" ry="75.5" fill='${color}' />
             <text            x='${xaxis}'
-            y='${yaxis}' font-family="Nunito Sans" font-size="35" fill='${nameColor}'>
+            y='${yaxis}' font-family="Verdana" font-size='${fontSize}' fill='${nameColor}'>
             ${name}
             </text>
             </svg>`;
@@ -43,13 +45,14 @@ export default function Home() {
           borderRadius={borderRadius}
           width={xaxis}
           height={yaxis}
+          fontSize={fontSize}
         />
         <SvgLayout>
           {" "}
           <input
             type="text"
             value={name}
-            className=" bg-gray-800 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+            className=" bg-gray-800 rounded-lg py-2  px-4 block w-full appearance-none leading-normal"
             onChange={(e) => setName(e.target.value)}
           />
           <div className="py-4 w-full flex flex-col justify-around ">
@@ -64,7 +67,7 @@ export default function Home() {
             </div>
           </div>
           <div className="py-4 w-full flex flex-col justify-around ">
-            <h1>textcolor </h1>
+            <h1>Text Color </h1>
             <div className="py-4 w-full flex  justify-around ">
               <input
                 type="color"
@@ -72,6 +75,17 @@ export default function Home() {
                 onChange={(e) => setNameColor(e.target.value)}
               />
               {nameColor}
+            </div>
+          </div>
+          <div className="py-4 w-full flex flex-col justify-around ">
+            <h1>Font Size </h1>
+            <div className="py-4 w-full flex  justify-around ">
+              <input
+                type="range"
+                value={fontSize}
+                onChange={(e) => setFontSize(e.target.value)}
+              />
+              {fontSize}
             </div>
           </div>
           <div className="py-4 w-full flex flex-col justify-around ">
@@ -96,22 +110,11 @@ export default function Home() {
               {yaxis}
             </div>
           </div>{" "}
-          {/* <input
-            type="range"
-            min="0"
-            max="1000"
-            value={height}
-            onChange={(e) => setHeight(e.target.value)}
-          /> */}
         </SvgLayout>
       </Container>
-
-      {/* <div></div> */}
-      {/* {borderRadius}
-      {width} */}
       <div className="flex justify-center items-center my-6">
         <button
-          className="border-2 border-white px-3 py-2 rounded-xl "
+          className="border-2 border-white px-3 py-2 rounded hover:bg-white hover:text-black "
           onClick={saveDoc}
         >
           Download

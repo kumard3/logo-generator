@@ -7,6 +7,7 @@ export default function Svg({
   borderRadius,
   width,
   height,
+  fontSize,
 }: any) {
   return (
     <SvgLayout>
@@ -17,7 +18,7 @@ export default function Svg({
             x={`${width}`}
             y={`${height}`}
             fontFamily="Verdana"
-            fontSize="35"
+            fontSize={fontSize}
             fill={nameColor}
           >
             {name}
